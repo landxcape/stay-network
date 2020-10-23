@@ -32,7 +32,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">
             {% if user.is_authenticated %}
-            {{ profile.username }}
+            {{ user.username }}
             {% endif %}
           </a>
         </li>

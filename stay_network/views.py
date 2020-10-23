@@ -11,9 +11,7 @@ from .models import User
 
 
 def index(request):
-    return render(request, 'stay_network/index.html', {
-        "profile": {"username": "ashish"}
-    })
+    return render(request, 'stay_network/index.html')
 
 
 def login_view(request):
