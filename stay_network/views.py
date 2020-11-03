@@ -66,6 +66,6 @@ def register(request):
         return render(request, "stay_network/register.html")
 
 
-@login_required(login_url="stay_network/login.html")
+@login_required(login_url="login")
 def profile(request):
     return render(request, "stay_network/profile.html")
