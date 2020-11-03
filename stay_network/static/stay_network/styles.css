@@ -1,0 +1,13 @@
+
+.main {
+    padding: 10px;
+}
+
+.sidebar {
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 5px;
+}
