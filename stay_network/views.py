@@ -64,3 +64,8 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "stay_network/register.html")
+
+
+@login_required(login_url="stay_network/login.html")
+def profile(request):
+    return render(request, "stay_network/profile.html")
