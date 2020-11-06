@@ -5,5 +5,14 @@
 {% endblock title %}
 
 {% block body %}
-{{ user.username }}'s Profile
+<div class="row p-0 m-0">
+  <div class="col col-lg-4 col-sm-6 bg-info">
+    <div class="user-image">
+      <img src="#" alt="{{ user.username }}">
+    </div>
+  </div>
+  <div class="col col-lg-8 col-sm-6">
+    <h2>Welcome Back, {{ user.username }}!</h2>
+  </div>
+</div>
 {% endblock body %}
