@@ -22,3 +22,19 @@ class Rental(models.Model):
     parking = models.BooleanField(default=False)
     availability = models.CharField(max_length=64)
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    def serialize(self):
+        return {
+            "renter": self.renter.username,
+            "title": self.title,
+            "description": self.description,
+            "location": self.location,
+            "geo_location": self.geo_location,
+            "no_of_rooms": self.no_of_rooms,
+            "rent_type": self.rent_type,
+            "floor": self.floor,
+            "facilities": self.facilities,
+            "parking": self.parking,
+            "availability": self.availability,
+            "timestamp": self.timestamp.strftime("%b %d %Y, %I:%M %p"),
+        }
