@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 
-from .models import User
+from .models import User, Rental
 
 
 def index(request):
@@ -67,5 +67,13 @@ def register(request):
 
 
 @login_required(login_url="login")
-def profile(request):
-    return render(request, "stay_network/profile.html")
+def profile(request, username):
+    try:
+        user = User.objects.get(username=username)
+    except user.DoesNotExist:
+        return HttpResponse("user not found")
+
+    return render(request, "stay_network/profile.html", {
+        "username": user.username,
+        "rents": Rental.objects.filter(renter=user.username)
+    })
